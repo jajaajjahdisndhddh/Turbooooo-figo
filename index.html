@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cristiano Ronaldo — The GOAT</title>
+    <title>Cristiano Ronaldo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="glow-blob"></div>
-
     <header>
         <nav class="glass-nav">
             <span class="logo">CR7</span>
             <div class="nav-links">
-                <a href="#">History</a>
-                <a href="#">Stats</a>
-                <a href="#" class="cta">Follow</a>
+                <a href="#">HISTORY</a>
+                <a href="#">STATISTICS</a>
+                <a href="#" class="cta">FOLLOW</a>
             </div>
         </nav>
     </header>
 
     <main class="container">
         <section class="hero">
-            <h1 class="reveal-text">Cristiano <span class="outline">Ronaldo</span></h1>
-            <p class="subtitle">The pinnacle of athletic excellence and football history.</p>
+            <h1 class="reveal-text">CRISTIANO <span class="outline">RONALDO</span></h1>
+            <p class="subtitle">THE HIGHEST STANDARD OF FOOTBALL EXCELLENCE.</p>
         </section>
 
         <div class="glass-card main-content">
@@ -34,13 +32,18 @@
             <p>Cristiano Ronaldo dos Santos Aveiro (Funchal, 5 febbraio 1985) è considerato uno dei calciatori più forti e iconici della storia del calcio.</p>
             
             <div class="image-wrapper">
-                <img src="https://images.unsplash.com/photo-1599391001716-430c5e62701d?q=80&w=2070&auto=format&fit=crop" alt="Ronaldo">
+                <img id="ronaldo-img" src="images/cr7-main.jpg" alt="Cristiano Ronaldo" style="display: none;">
+                <div id="image-fallback" class="glass-fallback">
+                    <div class="inner-liquid"></div>
+                    <p>OFFICIAL MEDIA PENDING</p>
+                </div>
             </div>
 
             <div class="grid-stats">
                 <div class="stat-item">
                     <h3>Carriera</h3>
                     <ul>
+                        <li>Sporting CP</li>
                         <li>Manchester United</li>
                         <li>Real Madrid</li>
                         <li>Juventus</li>
@@ -50,14 +53,33 @@
                 <div class="stat-item highlight">
                     <h3>Legacy</h3>
                     <p class="ballon-count">5</p>
-                    <p>Palloni d'Oro</p>
+                    <p>PALLONI D'ORO</p>
                 </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 CR7 Legacy Project. Built with Style.</p>
+        <p>&copy; 2026 CR7 LEGACY PROJECT. ALL RIGHTS RESERVED.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const img = document.getElementById('ronaldo-img');
+            const fallback = document.getElementById('image-fallback');
+
+            img.onload = function() {
+                img.style.display = 'block';
+                fallback.style.display = 'none';
+            };
+
+            img.onerror = function() {
+                img.style.display = 'none';
+                fallback.style.display = 'flex';
+            };
+
+            if (img.complete) { img.onload(); }
+        });
+    </script>
 </body>
 </html>
